@@ -1,0 +1,4 @@
+-i https://pypi.org/simple
+flask==3.0.3; python_version >= '3.8'
+pydantic==2.8.2; python_version >= '3.8'
+spectree==1.2.10; python_version >= '3.8'
