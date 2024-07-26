@@ -4,6 +4,9 @@ from flask import Flask, request, jsonify
 from spectree import SpecTree, Response
 from pydantic.v1 import BaseModel, Field, constr, root_validator
 
+app = Flask(__name__)
+spec = SpecTree("flask", title='Demo API', version='1.1.1', path='docs/')
+
 
 class Profile(BaseModel):
     name: constr(min_length=2, max_length=40)
@@ -25,10 +28,6 @@ class UserQueryModel(BaseModel):
 
 class Message(BaseModel):
     text: str
-
-
-app = Flask(__name__)
-spec = SpecTree("flask", title='Demo API', version='1.1.1', path='docs/')
 
 
 @app.route("/")
