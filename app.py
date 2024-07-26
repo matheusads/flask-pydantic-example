@@ -28,7 +28,7 @@ class Message(BaseModel):
 
 
 app = Flask(__name__)
-spec = SpecTree("flask")
+spec = SpecTree("flask", title='Demo API', version='1.1.1', path='docs/')
 
 
 @app.route("/")
